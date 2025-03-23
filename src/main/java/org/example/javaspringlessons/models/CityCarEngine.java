@@ -1,9 +1,9 @@
-package org.example.javaspringlessons;
+package org.example.javaspringlessons.models;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class CityCarEngine implements Engine{
+public class CityCarEngine implements Engine {
     @Override
     public String getType() {
         return "this is a city car engine";

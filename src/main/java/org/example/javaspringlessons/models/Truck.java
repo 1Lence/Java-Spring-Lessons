@@ -1,7 +1,5 @@
-package org.example.javaspringlessons;
+package org.example.javaspringlessons.models;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

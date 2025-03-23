@@ -1,4 +1,4 @@
-package org.example.javaspringlessons;
+package org.example.javaspringlessons.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,4 +1,4 @@
-package org.example.javaspringlessons;
+package org.example.javaspringlessons.models;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
