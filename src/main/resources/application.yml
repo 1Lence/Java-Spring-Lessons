@@ -1,0 +1,12 @@
+spring:
+  application.name: Java-Spring-Lessons
+  profiles:
+    active: dev
+
+app:
+  name: "Java-Spring-Lessons"
+  db:
+    url: "jdbc:someSql://defaultPath/defaultDb"
+  values:
+    - 0
+    - 0

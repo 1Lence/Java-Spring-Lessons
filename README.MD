@@ -1,0 +1,21 @@
+Петров Кирилл Антонович
+Преподаватель: Иванов Никита
+
+Конфиги:
+
+1) Создать 3 профиля - dev, test, prod, каждый из которых будет включать в себя:
+   a) конфиг с листом из нескольких значений
+   b) название приложения
+   c) конфиг с переменной окружения, по дефолту значение - default
+2) 3 бина:
+   a) один создается, только если профиль test,
+   b) другой, если существует первый бин,
+   c) третий, если в конфиге EXAMPLE_TEST (env var) не “default” (тут в идеале со скриншотом)
+
+Профиль - Dev, APP_ENV - default
+
+![Console](https://github.com/1Lence/Java-Spring-Lessons/blob/ConfigsProfiles/screenshots/default_env.jpg)
+
+Профиль - test, APP_ENV - not_default
+
+![Console](https://github.com/1Lence/Java-Spring-Lessons/blob/ConfigsProfiles/screenshots/not_default_env.jpg)

@@ -1,0 +1,14 @@
+spring:
+  application.name: Java-Spring-Lessons
+
+server:
+  port: 8383
+
+app:
+  env-value: ${APP_ENV:default}
+  name: "Java-Spring-Lessons-Dev"
+  db:
+    url: "jdbc:someSql://testPath/testDb"
+  values:
+    - 2000000
+    - -2000000
