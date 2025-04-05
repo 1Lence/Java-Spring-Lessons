@@ -1,0 +1,44 @@
+package org.example.javaspringlessons.services;
+
+import lombok.RequiredArgsConstructor;
+import org.example.javaspringlessons.dto.TodoListDto;
+import org.example.javaspringlessons.entity.EventEntity;
+import org.example.javaspringlessons.entity.TodoListEntity;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class MapperService {
+    private final NewService newService;
+
+    public void fromDtoToEntity(TodoListDto eventDto){
+        TodoListEntity todoList = TodoListEntity.builder()
+                .name(eventDto.getName())
+                .build();
+
+        List<EventEntity> eventList = eventDto.getEvents()
+                .stream()
+                .map(event -> {
+                    return EventEntity.builder()
+                            .name(event)
+                            .todoList(todoList)
+                            .build();
+                }).toList();
+
+        todoList.setEvents(eventList);
+        newService.saveEvent(todoList);
+    }
+
+    public List<TodoListDto> fromEntityToDto(){
+        var obj = newService.getAll();
+        List<TodoListDto> todoListDto = obj.stream()
+                .map(entity -> TodoListDto.builder()
+                        .name(entity.getName())
+                        .events(entity.getEvents().stream().map(event -> event.getName()).toList())
+                        .build())
+                .toList();
+        return todoListDto;
+    }
+}
