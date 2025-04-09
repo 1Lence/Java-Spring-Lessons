@@ -1,11 +1,13 @@
 package org.example.javaspringlessons;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class CityCar extends Car implements CarJob {
-    Engine cityCarEngine;
+    private Engine cityCarEngine;
 
     @Autowired
     public void setEngine(Engine cityCarEngine) {
@@ -14,6 +16,6 @@ public class CityCar extends Car implements CarJob {
 
     @Override
     public void doSomething() {
-        System.out.println(cityCarEngine.getType() + " Inside City Car");
+        log.info(cityCarEngine.getType() + " Inside City Car");
     }
 }

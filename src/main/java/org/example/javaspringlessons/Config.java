@@ -12,7 +12,7 @@ public class Config {
     }
 
     @Bean
-    public SportCar getSportCar(Engine sportEngine) {
+    public SportCar sportCar(Engine sportEngine) {
         return new SportCar(sportEngine);
     }
 }

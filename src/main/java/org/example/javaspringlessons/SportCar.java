@@ -1,18 +1,16 @@
 package org.example.javaspringlessons;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
+@Slf4j
+@RequiredArgsConstructor
 public class SportCar extends Car implements CarJob {
-    Engine sportEngine;
-
-    @Autowired
-    public SportCar(Engine sportEngine) {
-        this.sportEngine = sportEngine;
-    }
+    private final Engine sportEngine;
 
     @Override
     public void doSomething() {
-        System.out.println(sportEngine.getType() + " in sport car");
+        log.info(sportEngine.getType() + " in sport car");
     }
 }

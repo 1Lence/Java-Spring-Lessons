@@ -10,7 +10,6 @@ import java.util.List;
 
 @SpringBootApplication
 //Просто стало интересно как работать в конфигурацией
-@Import(Config.class)
 public class JavaSpringLessonsApplication {
     public static void main(String[] args) {
         SpringApplication.run(JavaSpringLessonsApplication.class, args);

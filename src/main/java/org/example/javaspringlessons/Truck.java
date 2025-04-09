@@ -2,16 +2,18 @@ package org.example.javaspringlessons;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class Truck extends Car implements CarJob {
     @Autowired
-    Engine truckEngine;
+    private Engine truckEngine;
 
     @Override
     public void doSomething() {
-        System.out.println(truckEngine.getType() + " in truck");
+        log.info(truckEngine.getType() + " in truck");
     }
 }

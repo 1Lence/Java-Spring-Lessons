@@ -1,22 +1,13 @@
 Петров Кирилл Антонович
 Преподаватель: Иванов Никита
 
-Задание Spring-Boot_Application:
+Внес правки в соответсвии с ошибками
 
-Сама SpringBootApplication должна быть в стартер классе
-exclude - Исключает указанные классы из автоматической настройки
-Пр. @SpringBootApplication(exclude = {SomeClass.class})
+Домашнее задание по теме Dependency Injection:
 
-excludeName - Исключает классы по их полным именам
-Пр. @SpringBootApplication(excludeName = {"org.springframework.boot.autoconfigure.jdbc.SomeClass")
-
-scanBasePackages - Задает пакеты для сканирования
-Пр. @SpringBootApplication(scanBasePackages = {"com.example.Demo"})
-
-scanBasePackageClasses - Указывает пакеты для сканирования через классы
-Пр. @SpringBootApplication(scanBasePackageClasses = {Demo.class})
-
-proxyBeanMethods - создает прокси-классы для методов @Bean. Это значит, что если один бин зависит от другого, 
-Spring гарантирует, что будет использован один и тот же экземпляр. [true, false]
-
-nameGenerator - генератор имён бинов, можно сделать кастомный и переопределить
+Реализовать приложение (не важно какая логика, так как основой упор идет на DI), в котором:
+●  используется DI через конструктор
+●  используется DI через поле
+●  используется DI через сеттеры
+●  создаются и внедряются два бина разных классов, но реализующих один интерфейс
+●  при создании и “разрушении” бина в лог выводится сообщение
