@@ -38,11 +38,10 @@ public class SecurityConfig {
 
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-        String userPass = encoder.encode("user");
-        String adminPass = encoder.encode("admin");
-        String supportPass = encoder.encode("support");
+        String userPass = passwordEncoder().encode("user");
+        String adminPass = passwordEncoder().encode("admin");
+        String supportPass = passwordEncoder().encode("support");
 
         UserDetails user = User.builder()
                 .username("user")
