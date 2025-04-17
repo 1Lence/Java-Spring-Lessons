@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class SomeService {
     public String job(int count){
-        log.info("== This is for of SomeService ==");
+        log.info("== This is the work of the service ==");
         return "У вас есть доступ к сервису, осталось попыток: " + count;
     }
 }
