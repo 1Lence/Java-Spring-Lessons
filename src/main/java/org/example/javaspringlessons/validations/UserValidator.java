@@ -15,7 +15,7 @@ public class UserValidator implements ConstraintValidator<UserCorrectness, UserD
     @Override
     public boolean isValid(UserDto userDto, ConstraintValidatorContext constraintValidatorContext) {
         Pattern pattern = Pattern.compile("^.{5,20}$");
-        Matcher matcher = pattern.matcher(userDto.getPassword());
-        return hasText(userDto.getEmail()) && hasText(userDto.getName()) && matcher.matches() && userDto.getEmail().endsWith("@gmail.com");
+        Matcher matcher = pattern.matcher(userDto.password());
+        return hasText(userDto.email()) && hasText(userDto.name()) && matcher.matches() && userDto.email().endsWith("@gmail.com");
     }
 }

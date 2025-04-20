@@ -4,7 +4,6 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.stereotype.Component;
 
-@Component
 public class CustomEmailValidator implements ConstraintValidator<CustomEmailValid, String> {
 
     @Override
