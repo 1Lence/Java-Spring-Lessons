@@ -27,7 +27,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/public/**").hasRole("USER")
+                        .requestMatchers("/public/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
@@ -37,11 +37,11 @@ public class SecurityConfig {
     }
 
     @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
+    public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
 
-        String userPass = passwordEncoder().encode("user");
-        String adminPass = passwordEncoder().encode("admin");
-        String supportPass = passwordEncoder().encode("support");
+        String userPass = passwordEncoder.encode("user");
+        String adminPass = passwordEncoder.encode("admin");
+        String supportPass = passwordEncoder.encode("support");
 
         UserDetails user = User.builder()
                 .username("user")
