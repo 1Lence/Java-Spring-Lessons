@@ -4,9 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.javaspringlessons.models.EnvVarBean;
 import org.example.javaspringlessons.models.OnlyForTests;
 import org.example.javaspringlessons.models.OnlyIfTestBeanExist;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -33,7 +31,7 @@ public class Config {
     }
 
     @Bean
-    @ConditionalOnProperty(prefix = "app", value = "env-value", havingValue = "default")
+    @ConditionalOnProperty("'${app.env-value:default}' != 'default'")
     public EnvVarBean envVarBean() {
         log.info("Creating env var bean");
         return new EnvVarBean();

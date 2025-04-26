@@ -5,7 +5,6 @@ server:
   port: 8383
 
 app:
-  env-value: ${APP_ENV:default}
   name: "Java-Spring-Lessons-Dev"
   db:
     url: "jdbc:someSql://testPath/testDb"

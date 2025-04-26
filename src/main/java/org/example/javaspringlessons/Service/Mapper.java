@@ -11,8 +11,7 @@ public class Mapper {
     private final DbConfigProperties dbConfigProperties;
 
     public Dto getDto() {
-        var dto = Dto.builder().name(dbConfigProperties.getName())
+        return Dto.builder().name(dbConfigProperties.getName())
                 .someData(dbConfigProperties.getValues()).build();
-        return dto;
     }
 }

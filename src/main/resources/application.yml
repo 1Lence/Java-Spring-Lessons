@@ -4,6 +4,7 @@ spring:
     active: dev
 
 app:
+  env-value: ${APP_ENV:default}
   name: "Java-Spring-Lessons"
   db:
     url: "jdbc:someSql://defaultPath/defaultDb"

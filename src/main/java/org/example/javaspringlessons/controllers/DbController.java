@@ -15,7 +15,7 @@ public class DbController {
     private final Mapper mapper;
 
     @Value("${app.env-value}")
-    private Object env;
+    private String env;
 
     @GetMapping("/first")
     public Dto get(){

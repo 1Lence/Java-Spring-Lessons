@@ -5,7 +5,6 @@ server:
   port: 8282
 
 app:
-  env-value: ${APP_ENV:default}
   name: "Java-Spring-Lessons-Prod"
   values:
     - 1
