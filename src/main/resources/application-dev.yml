@@ -1,0 +1,13 @@
+spring:
+  application.name: Java-Spring-Lessons
+
+server:
+  port: 8181
+
+app:
+  db:
+    url: "jdbc:someSql://devPath/devDb"
+  name: "Java-Spring-Lessons-Dev"
+  values:
+    - 20
+    - 2

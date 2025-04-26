@@ -1,0 +1,13 @@
+spring:
+  application.name: Java-Spring-Lessons
+  profiles:
+    active: dev
+
+app:
+  env-value: ${APP_ENV:default}
+  name: "Java-Spring-Lessons"
+  db:
+    url: "jdbc:someSql://defaultPath/defaultDb"
+  values:
+    - 0
+    - 0
