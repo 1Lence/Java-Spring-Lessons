@@ -17,8 +17,8 @@ public class EventEntity implements BaseEntity<Integer> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "event_name", nullable = false)
-    private String name;
+    @Column(nullable = false)
+    private String eventName;
 
     @ManyToOne
     @JoinColumn(name = "todo_list_id")

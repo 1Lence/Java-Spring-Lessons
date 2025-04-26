@@ -15,14 +15,14 @@ public class MapperService {
 
     public void fromDtoToEntity(TodoListDto eventDto){
         TodoListEntity todoList = TodoListEntity.builder()
-                .name(eventDto.getName())
+                .name(eventDto.name())
                 .build();
 
-        List<EventEntity> eventList = eventDto.getEvents()
+        List<EventEntity> eventList = eventDto.events()
                 .stream()
                 .map(event -> {
                     return EventEntity.builder()
-                            .name(event)
+                            .eventName(event)
                             .todoList(todoList)
                             .build();
                 }).toList();
@@ -33,12 +33,11 @@ public class MapperService {
 
     public List<TodoListDto> fromEntityToDto(){
         var obj = newService.getAll();
-        List<TodoListDto> todoListDto = obj.stream()
+        return obj.stream()
                 .map(entity -> TodoListDto.builder()
                         .name(entity.getName())
-                        .events(entity.getEvents().stream().map(event -> event.getName()).toList())
+                        .events(entity.getEvents().stream().map(EventEntity::getEventName).toList())
                         .build())
                 .toList();
-        return todoListDto;
     }
 }

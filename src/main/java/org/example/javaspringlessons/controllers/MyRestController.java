@@ -3,7 +3,6 @@ package org.example.javaspringlessons.controllers;
 import lombok.RequiredArgsConstructor;
 import org.example.javaspringlessons.dto.TodoListDto;
 import org.example.javaspringlessons.services.MapperService;
-import org.example.javaspringlessons.services.NewService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MyRestController {
     private final MapperService mapperService;
-
 
     @PostMapping
     public void save(@RequestBody TodoListDto todoListDto) {
